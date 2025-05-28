@@ -27,10 +27,19 @@
   </style>
 </head>
 <body>
+<div style="position: fixed; top: 10px; right: 10px; z-index: 999;">
+  <select id="languageSwitcher" onchange="switchLanguage()" style="padding: 4px; font-size: 14px;">
+    <option value="en">🇺🇸 English</option>
+    <option value="zh">🇹🇼 中文</option>
+    <option value="jp">🇯🇵 日本語</option>
+    <option value="fr">🇫🇷 Français</option>
+  </select>
+</div>
+
   <header>
     <img src="LOGO2.png" alt="Sun Oaks Logo">
     <h1>Sun Oaks Manufacturing Co., Ltd</h1>
-    <p>Expertise in Metal, Plastic, and Wood Products</p>
+    <p><span id="headlineText">專注在設計, 製作展示架, 置物架, 結合金屬/塑膠/木頭/LED燈光的全新概念產品</span></p>
   </header>
 
   <section>
@@ -60,5 +69,29 @@
     <p>Address: No.11, Ji'an 2nd St., Lukan Township, Changhua County</p>
     <p>&copy; 2025 Sun Oaks Manufacturing Co., Ltd</p>
   </footer>
+
+<script>
+  const translations = {
+    "headline": {
+      "en": "Expertise in Metal, Plastic, and Wood Products",
+      "zh": "專注在設計, 製作展示架, 置物架, 結合金屬/塑膠/木頭/LED燈光的全新概念產品",
+      "jp": "金属・プラスチック・木材・LED照明を融合した新しいディスプレイ設計製品に特化",
+      "fr": "Spécialisé dans la conception de présentoirs intégrant métal, plastique, bois et éclairage LED"
+    },
+    "services": {
+      "en": "OUR SERVICE: Display Racks, Display Cabinets, LED Design",
+      "zh": "展示架製造, 展示櫃製造, LED燈設計",
+      "jp": "展示ラック、ショーケース、LED照明設計",
+      "fr": "Présentoirs, vitrines, conception LED"
+    }
+  };
+
+  function switchLanguage() {
+    const lang = document.getElementById("languageSwitcher").value;
+    document.getElementById("headlineText").innerText = translations.headline[lang];
+    document.getElementById("serviceText").innerText = translations.services[lang];
+  }
+</script>
+
 </body>
 </html>
