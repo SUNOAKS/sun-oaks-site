@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sun Oaks Manufacturing Co., Ltd</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f3f2f0; margin: 0; color: #333; }
+    header, footer { background: #2e2e2e; color: white; padding: 40px 20px; text-align: center; }
+    section { padding: 40px 20px; max-width: 1000px; margin: auto; }
+    h2 { margin-top: 0; }
+    .products, .services { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); flex: 1 1 calc(30% - 40px); box-sizing: border-box; text-align: center; }
+    .card img { max-width: 100%; border-radius: 6px; }
+    .lang-switch { margin: 10px auto 30px; text-align: center; }
+    .lang-switch button { margin: 0 5px; padding: 8px 14px; border: none; background: #888; color: white; cursor: pointer; border-radius: 4px; }
+    .lang { display: none; }
+    .lang.active { display: block; }
+  </style>
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang').forEach(e => e.classList.remove('active'));
+      document.getElementById(lang).classList.add('active');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <img src="LOGO2.png" alt="Sun Oaks Logo" style="max-width:180px;"/><br/>
+    <h1>Sun Oaks Manufacturing Co., Ltd</h1>
+  </header>
+
+  <div class="lang-switch">
+    <button onclick="switchLang('en')">English</button>
+    <button onclick="switchLang('jp')">日本語</button>
+    <button onclick="switchLang('fr')">Français</button>
+  </div>
+
+  <div id="en" class="lang active">
+    <section><h2>Our Services</h2><div class="services">
+      <div class="card"><h3>Collector Display Stands</h3><p>Customized for figures, watches, bags, and rare items.</p></div>
+      <div class="card"><h3>LED Light Design</h3><p>Ambient lighting crafted to enhance any showcase.</p></div>
+    </div></section>
+    <section><h2>Products</h2><div class="products">
+      <div class="card"><img src="LINE_ALBUM_1.jpg"/></div>
+      <div class="card"><img src="LINE_ALBUM_2.jpg"/></div>
+      <div class="card"><img src="LINE_ALBUM_3.jpg"/></div>
+      <div class="card"><img src="LINE_ALBUM_4.jpg"/></div>
+      <div class="card"><img src="LINE_ALBUM_5.jpg"/></div>
+      <div class="card"><img src="LINE_ALBUM_6.jpg"/></div>
+    </div></section>
+    <footer><p>Email: sunoaks.tw@gmail.com<br/>Address: No.11, Ji'an 2nd St., Lukan Township, Changhua County</p></footer>
+  </div>
+
+  <div id="jp" class="lang">
+    <section><h2>サービス内容</h2><div class="services">
+      <div class="card"><h3>コレクション展示台</h3><p>フィギュア、時計、バッグなど貴重なアイテムに最適。</p></div>
+      <div class="card"><h3>LED照明設計</h3><p>展示物を引き立てる柔らかい光の演出。</p></div>
+    </div></section>
+    <section><h2>製品紹介</h2><div class="products">
+      <div class="card"><img src="LINE_ALBUM_1.jpg"/></div>
+      <div class="card"><img src="LINE_ALBUM_2.jpg"/></div>
+      <div class="card"><img src="LINE_ALBUM_3.jpg"/></div>
+      <div class="card"><img src="LINE_ALBUM_4.jpg"/></div>
+      <div class="card"><img src="LINE_ALBUM_5.jpg"/></div>
+      <div class="card"><img src="LINE_ALBUM_6.jpg"/></div>
+    </div></section>
+    <footer><p>メール: sunoaks.tw@gmail.com<br/>住所: 彰化縣鹿港鎮吉安二街11號</p></footer>
+  </div>
+
+  <div id="fr" class="lang">
+    <section><h2>Nos Services</h2><div class="services">
+      <div class="card"><h3>Présentoirs de collection</h3><p>Conçus pour figurines, montres, sacs de luxe, objets rares.</p></div>
+      <div class="card"><h3>Éclairage LED</h3><p>Design lumineux pour sublimer vos expositions.</p></div>
+    </div></section>
+    <section><h2>Produits</h2><div class="products">
+      <div class="card"><img src="LINE_ALBUM_1.jpg"/></div>
+      <div class="card"><img src="LINE_ALBUM_2.jpg"/></div>
+      <div class="card"><img src="LINE_ALBUM_3.jpg"/></div>
+      <div class="card"><img src="LINE_ALBUM_4.jpg"/></div>
+      <div class="card"><img src="LINE_ALBUM_5.jpg"/></div>
+      <div class="card"><img src="LINE_ALBUM_6.jpg"/></div>
+    </div></section>
+    <footer><p>Email : sunoaks.tw@gmail.com<br/>Adresse : No.11, Ji'an 2nd St., Lukan Township, Changhua County</p></footer>
+  </div>
+</body>
+</html>
