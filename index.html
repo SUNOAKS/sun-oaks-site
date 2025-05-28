@@ -1,87 +1,124 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sun Oaks Manufacturing Co., Ltd</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f3f2f0; margin: 0; color: #333; }
-    header, footer { background: #2e2e2e; color: white; padding: 40px 20px; text-align: center; }
-    section { padding: 40px 20px; max-width: 1000px; margin: auto; }
-    h2 { margin-top: 0; }
-    .products, .services { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-    .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); flex: 1 1 calc(30% - 40px); box-sizing: border-box; text-align: center; }
-    .card img { max-width: 100%; border-radius: 6px; }
-    .lang-switch { margin: 10px auto 30px; text-align: center; }
-    .lang-switch button { margin: 0 5px; padding: 8px 14px; border: none; background: #888; color: white; cursor: pointer; border-radius: 4px; }
-    .lang { display: none; }
-    .lang.active { display: block; }
-  </style>
-  <script>
-    function switchLang(lang) {
-      document.querySelectorAll('.lang').forEach(e => e.classList.remove('active'));
-      document.getElementById(lang).classList.add('active');
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
     }
-  </script>
+    header {
+      background-color: #2d2d2d;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    header img {
+      height: 60px;
+    }
+    nav {
+      text-align: right;
+      padding: 1rem;
+      background-color: #ddd;
+    }
+    select {
+      padding: 5px;
+    }
+    main {
+      padding: 2rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: #2d2d2d;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <img src="LOGO2.png" alt="Sun Oaks Logo" style="max-width:180px;"/><br/>
+    <img src="LOGO2.png" alt="Sun Oaks Logo" />
     <h1>Sun Oaks Manufacturing Co., Ltd</h1>
   </header>
 
-  <div class="lang-switch">
-    <button onclick="switchLang('en')">English</button>
-    <button onclick="switchLang('jp')">日本語</button>
-    <button onclick="switchLang('fr')">Français</button>
-  </div>
+  <nav>
+    <label for="lang">🌐 Language: </label>
+    <select id="lang" onchange="changeLanguage(this.value)">
+      <option value="en">English</option>
+      <option value="jp">日本語</option>
+      <option value="fr">Français</option>
+    </select>
+  </nav>
 
-  <div id="en" class="lang active">
-    <section><h2>Our Services</h2><div class="services">
-      <div class="card"><h3>Collector Display Stands</h3><p>Customized for figures, watches, bags, and rare items.</p></div>
-      <div class="card"><h3>LED Light Design</h3><p>Ambient lighting crafted to enhance any showcase.</p></div>
-    </div></section>
-    <section><h2>Products</h2><div class="products">
-      <div class="card"><img src="LINE_ALBUM_1.jpg"/></div>
-      <div class="card"><img src="LINE_ALBUM_2.jpg"/></div>
-      <div class="card"><img src="LINE_ALBUM_3.jpg"/></div>
-      <div class="card"><img src="LINE_ALBUM_4.jpg"/></div>
-      <div class="card"><img src="LINE_ALBUM_5.jpg"/></div>
-      <div class="card"><img src="LINE_ALBUM_6.jpg"/></div>
-    </div></section>
-    <footer><p>Email: sunoaks.tw@gmail.com<br/>Address: No.11, Ji'an 2nd St., Lukan Township, Changhua County</p></footer>
-  </div>
+  <main>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        Sun Oaks Manufacturing was founded by a group of passionate collectors, with one mission —
+        to craft display stands as unique as each collector’s treasure. We understand the emotional value behind
+        every collectible, which is why our designs range from minimalist wood and metal lines to LED-enhanced
+        features that make your collection truly shine.
+      </p>
+    </section>
 
-  <div id="jp" class="lang">
-    <section><h2>サービス内容</h2><div class="services">
-      <div class="card"><h3>コレクション展示台</h3><p>フィギュア、時計、バッグなど貴重なアイテムに最適。</p></div>
-      <div class="card"><h3>LED照明設計</h3><p>展示物を引き立てる柔らかい光の演出。</p></div>
-    </div></section>
-    <section><h2>製品紹介</h2><div class="products">
-      <div class="card"><img src="LINE_ALBUM_1.jpg"/></div>
-      <div class="card"><img src="LINE_ALBUM_2.jpg"/></div>
-      <div class="card"><img src="LINE_ALBUM_3.jpg"/></div>
-      <div class="card"><img src="LINE_ALBUM_4.jpg"/></div>
-      <div class="card"><img src="LINE_ALBUM_5.jpg"/></div>
-      <div class="card"><img src="LINE_ALBUM_6.jpg"/></div>
-    </div></section>
-    <footer><p>メール: sunoaks.tw@gmail.com<br/>住所: 彰化縣鹿港鎮吉安二街11號</p></footer>
-  </div>
+    <section id="services">
+      <h2>Our Services</h2>
+      <ul>
+        <li>Custom display stands: for figures, watches, luxury bags, and more</li>
+        <li>Metal structural design</li>
+        <li>Wooden cabinet craftsmanship</li>
+        <li>LED lighting integration</li>
+      </ul>
+    </section>
 
-  <div id="fr" class="lang">
-    <section><h2>Nos Services</h2><div class="services">
-      <div class="card"><h3>Présentoirs de collection</h3><p>Conçus pour figurines, montres, sacs de luxe, objets rares.</p></div>
-      <div class="card"><h3>Éclairage LED</h3><p>Design lumineux pour sublimer vos expositions.</p></div>
-    </div></section>
-    <section><h2>Produits</h2><div class="products">
-      <div class="card"><img src="LINE_ALBUM_1.jpg"/></div>
-      <div class="card"><img src="LINE_ALBUM_2.jpg"/></div>
-      <div class="card"><img src="LINE_ALBUM_3.jpg"/></div>
-      <div class="card"><img src="LINE_ALBUM_4.jpg"/></div>
-      <div class="card"><img src="LINE_ALBUM_5.jpg"/></div>
-      <div class="card"><img src="LINE_ALBUM_6.jpg"/></div>
-    </div></section>
-    <footer><p>Email : sunoaks.tw@gmail.com<br/>Adresse : No.11, Ji'an 2nd St., Lukan Township, Changhua County</p></footer>
-  </div>
+    <section id="products">
+      <h2>Featured Products</h2>
+      <div class="gallery">
+        <img src="LINE_ALBUM_1.jpg" />
+        <img src="LINE_ALBUM_2.jpg" />
+        <img src="LINE_ALBUM_3.jpg" />
+        <img src="LINE_ALBUM_4.jpg" />
+        <img src="LINE_ALBUM_5.jpg" />
+        <img src="LINE_ALBUM_6.jpg" />
+        <img src="d776a98e-4b4a-4535-9fa1-25d2ecb2373e.webp" />
+        <img src="未命名.png" />
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: <a href="mailto:sunoaks.tw@gmail.com">sunoaks.tw@gmail.com</a></p>
+      <p>Address: No.11, Ji'an 2nd St., Lukan Township, Changhua County, Taiwan</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Sun Oaks Manufacturing Co., Ltd
+  </footer>
+
+  <script>
+    function changeLanguage(lang) {
+      alert('This is a placeholder. Language switching will be added soon.');
+    }
+  </script>
 </body>
 </html>
